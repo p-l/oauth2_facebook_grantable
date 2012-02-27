@@ -5,7 +5,7 @@ module Devise
       def valid_facebook_access_token?(token)
         fb_user = FbGraph::User.me(token)
         Rails.logger.debug("valide_facebook_access_token? #{fbUser} | #{fbUser.identifier}")
-        if(fb_user && fbUser.identifier)
+        if(fb_user && fb_user.identifier)
           fb_user.identifer == self.facebook_identifier
         else
           false
