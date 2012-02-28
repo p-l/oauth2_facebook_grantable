@@ -1,6 +1,6 @@
 require 'devise'
 require 'rack/oauth2'
-require 'fb_graph'
+require 'koala'
 require 'devise_oauth2_providable'
 
 require 'devise/oauth2_facebook_grantable/strategies/facebook_grant_type'
