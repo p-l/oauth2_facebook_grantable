@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "oauth2_facebook_grantable"
 
   # specify any dependencies here; for example:
-  s.add_development_dependency "rspec"
   s.add_runtime_dependency "fb_graph"
   s.add_runtime_dependency "devise_oauth2_providable"
   s.files         = `git ls-files`.split("\n")
