@@ -20,11 +20,21 @@ module Devise
     def self.debugging=(boolean)
       @@debugging = boolean
     end
+
     class Railties < ::Rails::Railtie
       initializer 'Rails logger' do
         Devise::Oauth2ProvidableFacebook.logger = Rails.logger
       end
     end
+
+    class Engine < Rails::Engine
+      engine_name 'oauth2_facebook_grantable'
+      isolate_namespace Devise::Oauth2ProvidableFacebook
+      initializer "oauth2_facebook_grantable.initialize_application", :before=> :load_config_initializers do |app|
+        app.config.filter_parameters << :facebook_access_token
+      end
+    end
+    
   end
 end
 
