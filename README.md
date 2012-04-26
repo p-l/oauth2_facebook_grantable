@@ -20,7 +20,7 @@ Adds a grant_type "facebook" to the existing installation of
 #### Install gem
 ```ruby
 # Gemfile
-gem 'oauth2_providable_facebook'
+gem 'oauth2_facebook_grantable'
 ```
 
 #### Migrate database
@@ -29,7 +29,7 @@ It essentially adds a facebook_identifier column to the User model. It's
 required so the plugin can find a user based on its facebook_id
 
 ```
-$ rails g oauth2_providable_facebook:install
+$ rails g oauth2_facebook_grantable:install
 $ rake db:migrate
 ```
 
