@@ -4,3 +4,5 @@ source "http://rubygems.org"
 gemspec
 
 gem 'rspec'
+gem 'devise_oauth2_providable', '~> 1.1.0'
+gem 'koala', '~> 1.4.1'

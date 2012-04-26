@@ -1,0 +1,12 @@
+development:
+  facebook_api_key: "186907338078802"
+  facebook_api_secret: "92af665c205784a1e3a78e535dbe6754"
+
+test:
+  facebook_api_key: "186907338078802"
+  facebook_api_secret: "92af665c205784a1e3a78e535dbe6754"
+
+
+production:
+  facebook_api_key: "186907338078802"
+  facebook_api_secret: "92af665c205784a1e3a78e535dbe6754"
