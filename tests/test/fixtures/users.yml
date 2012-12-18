@@ -24,3 +24,6 @@ disabled:
 
 facebook:
   email: "facebookuser@fb.com"
+
+email_user:
+  email: "replaced@in.tests"
