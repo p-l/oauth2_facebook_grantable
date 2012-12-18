@@ -21,6 +21,18 @@ module Devise
       @@debugging = boolean
     end
 
+    def self.facebook_user_for_token(token)
+      begin
+        @@logger.error("Oauth2FacebookGrantable => Getting information from user token: #{token}")
+        @graph = Koala::Facebook::API.new(token)
+        return @graph.get_object("me")
+      rescue => e
+        @@logger.error("Oauth2FacebookGrantable => Could not authenticate with token: #{e}")
+        return false
+      end
+
+    end
+
     class Railties < ::Rails::Railtie
       initializer 'Rails logger' do
         Devise::Oauth2ProvidableFacebook.logger = Rails.logger
@@ -34,10 +46,10 @@ module Devise
         app.config.filter_parameters << :facebook_access_token
       end
     end
-    
+
   end
 end
 
 Devise.add_module(:oauth2_facebook_grantable,
-  :strategy => true,
-  :model => "devise/oauth2_facebook_grantable/models/oauth2_facebook_grantable")
+                  :strategy => true,
+                  :model => "devise/oauth2_facebook_grantable/models/oauth2_facebook_grantable")
